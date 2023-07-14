@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Body from './components/body/body'
+import Body from './components/body'
 
 
 function App() {
