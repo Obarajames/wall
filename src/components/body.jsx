@@ -1,8 +1,8 @@
 import { useState ,useEffect} from 'react';
 import "./body.css";
 import Post from './post';
-import  db  from '../firebase';
-import imageUpload from './imageUpload';
+import  {db } from '../firebase';
+import ImageUpload from './imageUpload';
 
 
 function body() {
@@ -21,18 +21,21 @@ function body() {
 
   return (
     <div className='app'>
-       <imageUpload />
+      
       
       <div className="app-header">
         <h2>TechPulse</h2>
       </div>
+      <div className="app-post">
       {
       posts.map(({id, post}) => (
         <Post key={id} username={post.username} caption={post.caption} description={post.description} url={post.url} />
       ))
       }      
+      </div>
       
-
+      
+      <ImageUpload />
     </div>
   )
 }
